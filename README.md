@@ -1,2 +1,2 @@
-# ANALISIS_SEXUALES_2
+# ANALISIS_SISTEMAS_2
  Proyecto de analisis de sistemas 2
