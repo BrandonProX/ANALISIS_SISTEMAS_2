@@ -28,7 +28,10 @@ function obtenerDatosFormulario() {
         segundoApellido: document.getElementById('segundoApellido').value,
         numeroTelefonico: document.getElementById('numeroTelefonico').value,
         correoElectronico: document.getElementById('correoElectronico').value,
-        cuiPersonal: document.getElementById('cuiPersonal').value
+        cuiPersonal: document.getElementById('cuiPersonal').value,
+        direccionPersonal: document.getElementById('direccionPersonal').value,
+        numeroCuenta: document.getElementById('numeroCuenta').value
+
     };
 }
 
@@ -53,7 +56,7 @@ btnRegistrar.addEventListener('click', () => {
     });
 });
 
-// Función para visualizar los estudiantes registrados
+// Función para visualizar los maestros registrados
 btnVisualizar.addEventListener('click', () => {
     fetch(apiURL)
     .then(response => response.json())
@@ -76,6 +79,9 @@ btnVisualizar.addEventListener('click', () => {
                 <td>${estudiante.numeroTelefonico}</td>
                 <td>${estudiante.correoElectronico}</td>
                 <td>${estudiante.cuiPersonal}</td>
+                <td>${estudiante.direccionPersonal}</td>
+                <td>${estudiante.numeroCuenta}</td>
+
             `;
             
             tbody.appendChild(fila);
@@ -131,6 +137,9 @@ btnEliminar.addEventListener('click', () => {
                 <td>${estudiante.numeroTelefonico}</td>
                 <td>${estudiante.correoElectronico}</td>
                 <td>${estudiante.cuiPersonal}</td>
+                <td>${estudiante.direccionPersonal}</td>
+                <td>${estudiante.numeroCuenta}</td>
+
                 <td>
                     <button onclick="eliminarEstudiante('${estudiante.cuiPersonal}')">Eliminar</button>
                 </td>

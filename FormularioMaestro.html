@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Maestro</title>
+    <title>Formulario Estudiante</title>
+    <link rel="stylesheet" href="recursos/css/estiloformulario.css">
 </head>
 <body>
-    <form action="" id="Formulario maestro">
+
+    <div class="container">
+        <input type="button" value="REGISTRAR" id="btnRegistrar">
+        <input type="button" value="VISUALIZAR" id="btnVisualizar">
+        <input type="button" value="ELIMINAR" id="btnEliminar">
+    </div>
+
+    <form action="" method="post" id="FormularioEstudiante">
+    <h1>Formulario de estudiante</h1>
         <fieldset id="infoPersonal">
 
             <label for="primerNombre">
@@ -34,10 +43,6 @@
             </label>
             <input type="number" name="" id="numeroTelefonico">
 
-        </fieldset>
-
-        <fieldset id="infoContacto">
-
             <label for="correoElectronico">
                 Ingresa tu correo electronico
             </label>
@@ -49,17 +54,58 @@
             <input type="number" name="" id="cuiPersonal">
 
             <label for="direccionPersonal">
-                Ingresa tu numero de CUI
+                Ingresa tu direccion
             </label>
-            <input type="text" name="" id="direccionPersonal">
-
+            <input type="text" id="direccionPersonal">
+            
             <label for="numeroCuenta">
-                Ingrea tu numero de cuenta
+                Ingresa tu numero de cuenta
             </label>
             <input type="text" id="numeroCuenta">
 
         </fieldset>
-
+        <input type="submit" value="REGISTRAR">
     </form>
+
+    <table id="tablaEstudiantes" style="display:none;">
+        <thead>
+            <tr>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Número Telefónico</th>
+                <th>Correo Electrónico</th>
+                <th>CUI</th>
+                <th>Direccion</th>
+                <th>Numero de cuenta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán las filas de datos -->
+        </tbody>
+    </table>
+
+    <table id="tablaEstudiantes" style="display:none;">
+        <thead>
+            <tr>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Número Telefónico</th>
+                <th>Correo Electrónico</th>
+                <th>CUI</th>
+                <th>Direccion</th>
+                <th>Numero de cuenta</th>
+                <th>Acciones</th> <!-- Nueva columna para el botón de eliminar -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán las filas de datos -->
+        </tbody>
+    </table>        
+
 </body>
+<script src="recursos/js/consultarApiMaestro.js"></script>
 </html>
