@@ -1,60 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FORMULARIO</title>
-
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-        body{
-            background-image: linear-gradient(54deg, rgb(129,27,27) 10%, rgb(77, 13, 13) 100%);
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            align-self: center;
-            flex-direction: column;
-            justify-items: center;
-            gap: 20px;
-        }
-
-        a{
-            display: flex;
-            text-decoration: none;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid black;
-            text-align: center;
-            margin: auto;
-            width: 50%;
-            height: 200px;
-            background-color: white;
-            color: black;
-            font-size: 24px;
-            border-radius: 90px;
-            font-weight: bolder;
-        }
-
-        a:hover{
-            border: 1px solid rgb(0,0,0);
-            transform: scale(1.02);
-            cursor: pointer;
-            background-color: rgb(255, 255, 255);
-            color: rgb(77, 13, 13);
-            font-size: 25px;
-            font-weight: bolder;
-        }
-    </style>
+    <title>Inicio - Colegio Jireh</title>
+    <link rel="icon" href="/recursos/imagenes/Logo.png" type="image/png">
+    <link rel="stylesheet" href="recursos/css/estilosIndex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
+
 <body>
-    <a href="FormularioMaestro.html">IR A MAESTRO</a>
-    <a href="FormularioEstudiante.html">IR A ESTUDIANTE</a>
+    <header>
+        <img src="recursos/imagenes/Logo.png" alt="Logo institucional - colegio Jireh">
+        <h1>Colegio Jireh</h1>
+        <nav>
+            <ul>
+                <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#SobreNosotros">Sobre Nosotros</a></li>
+                <li><a href="#Mision">Mision</a>
+                <li><a href="#Vision">Vision</a></li>
+                <li><a href="#Actividades">Actividades</a></li>
+                <li><a href="#Visitanos">Visitanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <article id="Inicio">
+            <img src="recursos/imagenes/Colegiojireh.jpg" alt="#">
+            <h2 class="encabezado">LA PLATAFORMA QUE LLEVA EL CONTROL ESCOLAR QUE NECESITAS</h2>
+            <section>
+                <p>Inscribe a tu hijo en nuestro colegio y abre las puertas a un futuro brillante, lleno de aprendizaje,
+                    valores y crecimiento integral.</p>
+            </section>
+            <h2 class="encabezado">INGRESA TU PERFIL</h2>
+            <section>
+
+                <div class="botones">
+                    <button id="btnFormMaestro">Maestro</button>
+                    <button id="btnFormAlumno">Alumno</button>
+                    <button id="btnFormAdmin">Administrador</button>
+                </div>
+            </section>
+        </article>
+
+        <article id="SobreNosotros">
+            <h2 class="encabezado">Sobre Nosotros</h2>
+            <section>
+                <p>En nuestro colegio, nos dedicamos a formar líderes con una educación integral que combina excelencia
+                    académica, valores sólidos y el desarrollo de habilidades sociales y emocionales. Nuestro enfoque
+                    personalizado garantiza que cada niño reciba la atención y el apoyo necesario para alcanzar su
+                    máximo potencial. Creemos en la importancia de un entorno seguro y acogedor, donde los estudiantes
+                    se sientan motivados a explorar, aprender y crecer. Con un equipo docente altamente capacitado y
+                    programas innovadores, preparamos a nuestros alumnos para enfrentar con éxito los retos del futuro.
+                </p>
+            </section>
+        </article>
+
+        <article id="Mision">
+            <h2 class="encabezado">Mision</h2>
+            <section>
+                <p>Nuestra misión es proporcionar una educación de calidad que fomente el desarrollo integral de
+                    nuestros
+                    estudiantes, cultivando en ellos un profundo amor por el aprendizaje, el respeto por los valores
+                    humanos, y la capacidad de convertirse en ciudadanos responsables y líderes en sus comunidades. Nos
+                    comprometemos a ofrecer un entorno seguro, inclusivo y estimulante, donde cada niño pueda descubrir
+                    y
+                    desarrollar sus talentos únicos, preparándolos para un futuro lleno de posibilidades.</p>
+            </section>
+        </article>
+        <article id="Vision">
+            <h2 class="encabezado">Vision</h2>
+            <section>
+                <p>Nuestra visión es ser un referente educativo de excelencia, reconocido por formar generaciones de
+                    estudiantes comprometidos con la sociedad, dotados de un sólido sentido ético, habilidades críticas
+                    y
+                    creativas, y una mentalidad global. Aspiramos a que nuestros egresados sean líderes capaces de
+                    enfrentar
+                    los desafíos del mundo con integridad, innovación y un compromiso inquebrantable con el bienestar
+                    común.
+                    Buscamos construir una comunidad educativa que inspire el amor por el aprendizaje continuo y
+                    contribuya
+                    activamente a un futuro más justo y sostenible</p>
+            </section>
+        </article>
+        <article id="Actividades">
+            <h2 class="encabezado">Actividades</h2>
+            <div class="actividades-grid">
+                <div class="card">
+                    <h4>Excursiones</h4>
+                    <p>Actividades recreativas al aire libre y salidas educativas motivando el aprendizaje en todas sus
+                        facetas
+                        mientras los estudiantes se divierten en el proceso.</p>
+                </div>
+                <div class="card">
+                    <h4>Lectopolis</h4>
+                    <img src="recursos/imagenes/lectopolis.png" alt="">
+                    <p>Lectopolis, es una plataforma que fomenta el aprendizaje en casas para los mas pequenos,
+                        reforzando
+                        la
+                        lectura con actividades de interpretacion, valoracion y reflexion.</p>
+                </div>
+                <div class="card">
+                    <h4>Scratch</h4>
+                    <img src="recursos/imagenes/Scratch-logo.png" alt="">
+                    <p>Scratch Su principal característica consiste en que permite el desarrollo de habilidades mentales
+                        mediante el aprendizaje de la programación sin tener conocimientos profundos sobre el código.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4>Progrentis</h4>
+                    <img src="recursos/imagenes/progrentis.png" alt="">
+                    <p>Progrentis es un programa que entrena destrezas que los estudiantes podrán aplicar en su futuro
+                        entorno
+                        laboral, social y personal, pues les enseña a aprender a aprender. </p>
+                </div>
+            </div>
+        </article>
+        <article id="Visitanos">
+            <h2 class="encabezado">Contactanos:</h2>
+            <section>
+                <h3>Ubicacion</h3>
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i><p>Lote x, seccion x, zona x, Guatemala</p>
+                </a>
+                <h3>Correo electronico</h3>
+                <a href="#">
+                    <i class="fas fa-phone-alt"></i><p>asdkl;fjlaksd@gmail.com</p>
+                </a>
+
+                <h3>Telefono</h3>
+                <a href="#">
+                    <i class="fas fa-envelope"></i><p>XXXX-XXXX</p>
+                </a>
+
+                <h3>Whatsapp</h3>
+                <a href="#">
+                    <i class="fab fa-whatsapp"></i><p>as.dkjfhaskldj</p>
+                </a>
+            </section>
+        </article>
+
+    </div>
+    <footer>
+        <section>
+            <p>xxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxx</p>
+        </section>
+        <section>
+            <p>xxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxx</p>
+        </section>
+        <section>
+            <p>xxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxx</p>
+            <p>xxxxxxxxxxxxx</p>
+
+        </section>
+    </footer>
 </body>
+<script src="recursos/js/index.js"></script>
 </html>
