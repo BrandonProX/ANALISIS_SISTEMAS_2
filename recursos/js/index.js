@@ -24,4 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
             targetArticle.style.display = 'flex';
         });
     });
-});
+
+    document.getElementById('btnFormMaestro').addEventListener('click', function() {
+        window.location.href = 'FormularioMaestro.html'; 
+    });
+    document.getElementById('btnFormAlumno').addEventListener('click', function() {
+        window.location.href = 'FormularioEstudiante.html'; 
+    });
+    
+    document.getElementById('btnFormAdmin').addEventListener('click', function() {
+        window.location.href = 'FormularioAdministrador.html'; 
+    });
+
+    
+})

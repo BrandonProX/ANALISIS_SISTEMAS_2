@@ -16,7 +16,7 @@
 }
 
 header{
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0;
     width: 100%;
@@ -102,6 +102,7 @@ header a:hover{
 }
 
 #Inicio section{
+    z-index: 1;
     width: 40%;
     margin: 2%;
     display: flex;
@@ -112,7 +113,6 @@ header a:hover{
 .encabezado{
     font-size: 50px;
     text-align: justify;
-    margin: 4% 2%;
     z-index: 1;
     color: var(--color-dorado);
     font-weight: bolder;
@@ -284,6 +284,7 @@ li{
 footer{
     position: absolute;
     width: 100%;
+    height: 30%;
     color:white ;
     background-color: #0d0c1d;
     display: flex;
