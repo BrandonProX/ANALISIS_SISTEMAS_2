@@ -69,90 +69,18 @@
                     <i class="fas fa-search"></i>
                 </div>
                 <form action="">
-                    <table>
+                    <table id="alumnosTable">
                         <thead>
-                            <td>Nombre</td>
-                            <td>Correo</td>
-                            <td>Grado</td>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Email</th>
+                            </tr>
                         </thead>
-                        <!-- En este espacio, los alumnos deben asignarse automaticamente y no de manera manual -->
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
-                        <tr>
-                            <td>Brandon</td>
-                            <td>Brandon@gmail.com</td>
-                            <td>5to primaria</td>
-                        </tr>
+                        <tbody id="alumnosTbody">
+                            <!-- Los alumnos se llenarán dinámicamente aquí -->
+                        </tbody>
                     </table>
-                </form>
             </div>
         </div>
         <div class="card-container" id="Notas">
@@ -392,4 +320,7 @@
 </body>
 <script src="recursos/js/Dashboard - maestro.js">
 </script>
+<script src="recursos/js/apiAlumnos.js"></script>
+
+
 </html>
