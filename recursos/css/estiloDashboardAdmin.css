@@ -5,6 +5,7 @@
     --color-azulMarino:#4b0e0e;
     --color-azul:#b60606;
     --color-dorado:#b79347;
+    --color-doradoOscuro:#806b3e;
     --color-piel--:#3f3328;
 }
 
@@ -29,7 +30,7 @@
     position: fixed;
     left: 0;
     height: 100%;
-    background-color:var(--color-azulMarino) ;
+    background-color:var(--color-doradoOscuro) ;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -72,7 +73,7 @@ hr{
 
 .sidebar a:hover{
     transform: scale(1.05);
-    background-color: var(--color-azul);
+    background-color: var(--color-dorado);
     border-radius: 20px;
 }
 
@@ -103,12 +104,12 @@ hr{
 
 .btnNavbar a{
     font-size: 60px;
-    color: var(--color-azulMarino);
+    color: var(--color-doradoOscuro);
 }
 
 .btnNavbar a:hover{
     transform: scale(1.2);
-    color: var(--color-azul);
+    color: var(--color-dorado);
 }
 
 .btnNavbar button{
@@ -116,14 +117,14 @@ hr{
     padding: 2%;
     font-size: 2em;
     border-radius: 20px;
-    background-color: var(--color-azulMarino);
+    background-color: var(--color-doradoOscuro);
     color: white;
     border: none;
 } 
 
 .btnNavbar button:hover{
     transform: scale(1.02);
-    background-color: var(--color-azul);
+    background-color: var(--color-dorado);
 }
 
 /* Estilos para las diferentes secciones creadas */
@@ -235,7 +236,7 @@ table {
 }
 
 thead {
-    background-color: var(--color-azulPetrolado);
+    background-color: var(--color-dorado);
     color: white; /* Color de texto de la cabecera */
 }
 
@@ -379,8 +380,6 @@ table input {
 }
 
 .calendario {
-    height: 100%;
-    width: 100%;
     text-align: center;
     margin: 20px;
 }
