@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Estudiante</title>
+    <link rel="stylesheet" href="recursos/css/estiloformulario.css">
+</head>
+<body>
+
+    <div class="container">
+        <input type="button" value="REGISTRAR" id="btnRegistrar">
+        <input type="button" value="VISUALIZAR" id="btnVisualizar">
+        <input type="button" value="ELIMINAR" id="btnEliminar">
+    </div>
+
+    <form action="" method="post" id="FormularioEstudiante">
+    <h1>Formulario de estudiante</h1>
+        <fieldset id="infoPersonal">
+
+            <label for="primerNombre">
+                Ingresa tu primer nombre
+            </label>
+            <input type="text" id="primerNombre">
+
+            <label for="segundoNombre">
+                Ingresa tu segundo nombre
+            </label>
+            <input type="text" name="" id="segundoNombre">
+
+            <label for="primerApellido">
+                Ingresa tu primer apellido
+            </label>
+            <input type="text" name="" id="primerApellido">
+
+            <label for="segundoApellido">
+                Ingresa tu segundo apellido
+            </label>
+            <input type="text" name="" id="segundoApellido">
+
+            <label for="numeroTelefonico">
+                Ingresa tu numero de telefono
+            </label>
+            <input type="number" name="" id="numeroTelefonico">
+
+            <label for="correoElectronico">
+                Ingresa tu correo electronico
+            </label>
+            <input type="email" name="" id="correoElectronico">
+
+            <label for="cuiPersonal">
+                Ingresa tu numero de cui
+            </label>
+            <input type="number" name="" id="cuiPersonal">
+
+            <label for="direccionPersonal">
+                Ingresa tu direccion
+            </label>
+            <input type="text" id="direccionPersonal">
+            
+            <label for="numeroCuenta">
+                Ingresa tu numero de cuenta
+            </label>
+            <input type="text" id="numeroCuenta">
+
+        </fieldset>
+        <input type="submit" value="REGISTRAR">
+    </form>
+
+    <table id="tablaEstudiantes" style="display:none;">
+        <thead>
+            <tr>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Número Telefónico</th>
+                <th>Correo Electrónico</th>
+                <th>CUI</th>
+                <th>Direccion</th>
+                <th>Numero de cuenta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán las filas de datos -->
+        </tbody>
+    </table>
+
+    <table id="tablaEstudiantes" style="display:none;">
+        <thead>
+            <tr>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Número Telefónico</th>
+                <th>Correo Electrónico</th>
+                <th>CUI</th>
+                <th>Direccion</th>
+                <th>Numero de cuenta</th>
+                <th>Acciones</th> <!-- Nueva columna para el botón de eliminar -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán las filas de datos -->
+        </tbody>
+    </table>        
+
+</body>
+<script src="recursos/js/consultarApiMaestro.js"></script>
+</html>

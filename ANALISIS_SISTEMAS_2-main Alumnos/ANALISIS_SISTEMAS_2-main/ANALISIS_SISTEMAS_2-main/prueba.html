@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Estudiante</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    padding: 40px;
+    background-color: rgb(167, 163, 163);
+}
+
+.container > input {
+    height: 60px;
+    width: 100%;
+    background-color: white;
+    border-radius: 9px;
+    border: none;
+}
+
+.container > input:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    border: none;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset {
+    margin: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+fieldset > input {
+    width: 80%;
+    height: 5vh;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+button {
+    padding: 5px 10px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input type="button" value="REGISTRAR" id="btnRegistrar">
+        <input type="button" value="VISUALIZAR" id="btnVisualizar">
+        <input type="button" value="ELIMINAR" id="btnEliminar">
+    </div>
+
+    <form action="" id="FormularioEstudiante">
+        <h1>Formulario de estudiante</h1>
+        <fieldset id="infoPersonal">
+
+            <label for="primerNombre">
+                Ingresa tu primer nombre
+            </label>
+            <input type="text" id="primerNombre">
+
+            <label for="segundoNombre">
+                Ingresa tu segundo nombre
+            </label>
+            <input type="text" id="segundoNombre">
+
+            <label for="primerApellido">
+                Ingresa tu primer apellido
+            </label>
+            <input type="text" id="primerApellido">
+
+            <label for="segundoApellido">
+                Ingresa tu segundo apellido
+            </label>
+            <input type="text" id="segundoApellido">
+
+            <label for="numeroTelefonico">
+                Ingresa tu numero de telefono
+            </label>
+            <input type="number" id="numeroTelefonico">
+
+            <label for="correoElectronico">
+                Ingresa tu correo electronico
+            </label>
+            <input type="email" id="correoElectronico">
+
+            <label for="cuiPersonal">
+                Ingresa tu numero de cui
+            </label>
+            <input type="number" id="cuiPersonal">
+
+        </fieldset>
+    </form>
+
+    <table id="tablaEstudiantes" style="display:none;">
+        <thead>
+            <tr>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Número Telefónico</th>
+                <th>Correo Electrónico</th>
+                <th>CUI</th>
+                <th>Acciones</th> <!-- Columna para los botones de eliminar -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán las filas de datos -->
+        </tbody>
+    </table>
+
+    <script>
+        // URL de la API (ejemplo)
+        const apiURL = 'https://ejemplo.com/api/estudiantes';
+
+        // Referencias a los elementos del formulario
+        const form = document.getElementById('FormularioEstudiante');
+        const btnRegistrar = document.getElementById('btnRegistrar');
+        const btnVisualizar = document.getElementById('btnVisualizar');
+        const btnEliminar = document.getElementById('btnEliminar');
+
+        // Función para obtener los datos del formulario
+        function obtenerDatosFormulario() {
+            return {
+                primerNombre: document.getElementById('primerNombre').value,
+                segundoNombre: document.getElementById('segundoNombre').value,
+                primerApellido: document.getElementById('primerApellido').value,
+                segundoApellido: document.getElementById('segundoApellido').value,
+                numeroTelefonico: document.getElementById('numeroTelefonico').value,
+                correoElectronico: document.getElementById('correoElectronico').value,
+                cuiPersonal: document.getElementById('cuiPersonal').value
+            };
+        }
+
+        // Función para registrar un nuevo estudiante
+        btnRegistrar.addEventListener('click', () => {
+            const datos = obtenerDatosFormulario();
+
+            fetch(apiURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(datos),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Estudiante registrado exitosamente');
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        // Función para visualizar los estudiantes registrados
+        btnVisualizar.addEventListener('click', () => {
+            fetch(apiURL)
+            .then(response => response.json())
+            .then(data => {
+                const tablaEstudiantes = document.getElementById('tablaEstudiantes');
+                const tbody = tablaEstudiantes.querySelector('tbody');
+
+                // Limpiar el contenido anterior
+                tbody.innerHTML = '';
+
+                // Rellenar la tabla con los datos obtenidos
+                data.forEach(estudiante => {
+                    const fila = document.createElement('tr');
+                    
+                    fila.innerHTML = `
+                        <td>${estudiante.primerNombre}</td>
+                        <td>${estudiante.segundoNombre}</td>
+                        <td>${estudiante.primerApellido}</td>
+                        <td>${estudiante.segundoApellido}</td>
+                        <td>${estudiante.numeroTelefonico}</td>
+                        <td>${estudiante.correoElectronico}</td>
+                        <td>${estudiante.cuiPersonal}</td>
+                        <td>
+                            <button onclick="eliminarEstudiante('${estudiante.cuiPersonal}')">Eliminar</button>
+                        </td>
+                    `;
+                    
+                    tbody.appendChild(fila);
+                });
+
+                // Mostrar la tabla
+                tablaEstudiantes.style.display = 'table';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        // Función para eliminar un estudiante
+        function eliminarEstudiante(cuiPersonal) {
+            if (confirm('¿Estás seguro de que deseas eliminar a este estudiante?')) {
+                fetch(`${apiURL}/${cuiPersonal}`, {
+                    method: 'DELETE',
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Estudiante eliminado exitosamente');
+                        // Vuelve a cargar la lista para reflejar los cambios
+                        btnEliminar.click();
+                    } else {
+                        alert('No se pudo eliminar el estudiante');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>

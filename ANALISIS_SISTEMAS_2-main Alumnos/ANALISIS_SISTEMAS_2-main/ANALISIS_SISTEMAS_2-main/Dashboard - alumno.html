@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Maestro Jireh</title>
+    <link rel="icon" href="recursos/imagenes/Logo.png" type="image/png">
+    <link rel="stylesheet" href="recursos/css/estiloDashboardAlumno.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <img src="recursos/imagenes/Logo.png" alt="">
+            <h1>COLEGIO JIREH</h1>
+            <hr>
+            <ul>
+                <li><a href="#Dashboard"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="#Materias"><i class="fas fa-calendar"></i>Materias</a></li>
+                <li><a href="#Foro"><i class="fas fa-comments"></i>Foro</a></li>
+                <li><a href="#Calendario"><i class="fas fa-calendar-alt"></i>
+                        <p>Calendario</p>
+                    </a></li>
+            </ul>
+        </div>
+        <div class="navbar">
+            <div class="btnNavbar">
+                <a href="#" alt="Notificaciones"><i class="fas fa-bell"></i></a>
+                <button id="cerrarSesion">Cerrar sesion</button>
+            </div>
+        </div>
+        <div class="card-container" id="Dashboard">
+            <div class="descripcion">
+                <h1>Bienvenido, <span class="user">Eva</span></h1>
+                <h2>EvaV.colegiojireh@gmail.com</h2>
+            </div>
+            <div class="opciones">
+                <div class="opcion">
+                    <a href="#Materias"><i class="fas fa-book"></i>Control de materias</a>
+                    <p>Toma el control de tus materias</p>
+                </div>
+                <div class="opcion">
+                    <a href="#Foro"><i class="fas fa-comments"></i>Consulta el foro</a>
+                    <p>Participa en discusiones</p>
+                </div>
+                <div class="opcion">
+                    <a href="#Calendario"><i class="fas fa-calendar-alt"></i>Calendario</a>
+                    <p>Revisa tu calendario</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-container" id="Foro" class="Foro">
+            <!-- Contenido del foro -->
+            <div class="foro">
+                <p>Aquí podrás consultar los foros y discusiones</p>
+            </div>
+        </div>
+        <div class="card-container" id="Materias">
+            <div class="notas">
+                <div class="opcNotas">
+                    <select name="materia" id="materia">
+                        <option value="">Selecciona la materia</option>
+                        <option value="Matematica">Matematica</option>
+                        <option value="Lenguaje">Lenguaje</option>
+                        <option value="M. Natural">M. Natural</option>
+                        <option value="M. Social">M. Social</option>
+                        <option value="Ingles">Ingles</option>
+                        <option value="Computacion">Computacion</option>
+                        <option value="Ed. Fisica">Ed. Fisica</option>
+                        <option value="Lectura">Lectura</option>
+                        <option value="Form. Ciudadana">Form. Ciudadana</option>
+                    </select>
+                </div>
+                <form action="" id="notasForm">
+                    <table>
+                        <thead>
+                            <td>Actividades</td>
+                            <td>Asistencia</td>
+                            <td>Examen</td>
+                            <td>Nota Final</td>
+                        </thead>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <!-- Más filas de ejemplo -->
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="card-container" id="Calendario">
+            <div class="calendario">
+                <h2>Calendario Académico</h2>
+                <div id="calendar"></div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</body>
+<script src="recursos/js/Dashboard - Alumno.js"></script>
+
+</html>

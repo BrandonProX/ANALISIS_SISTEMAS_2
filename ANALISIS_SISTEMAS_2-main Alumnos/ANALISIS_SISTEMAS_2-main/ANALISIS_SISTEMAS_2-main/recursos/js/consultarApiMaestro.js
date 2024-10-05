@@ -1,0 +1,178 @@
+// URL de la API
+const apiURL = '';
+
+// Referencias a los elementos del formulario
+document.getElementById('btnRegistrar').addEventListener('click', function() {
+    document.getElementById('FormularioEstudiante').style.display = 'flex';
+    document.getElementById('tablaEstudiantes').style.display = 'none';
+});
+
+document.getElementById('btnVisualizar').addEventListener('click', function() {
+    document.getElementById('FormularioEstudiante').style.display = 'none';
+    document.getElementById('tablaEstudiantes').style.display = 'flex';
+});
+
+document.getElementById('btnEliminar').addEventListener('click', function() {
+    document.getElementById('FormularioEstudiante').style.display = 'none';
+    document.getElementById('tablaEstudiantes').style.display = 'flex';
+    // Aquí podrías agregar la lógica para seleccionar el estudiante a eliminar
+});
+
+
+// Función para obtener los datos del formulario
+function obtenerDatosFormulario() {
+    return {
+        primerNombre: document.getElementById('primerNombre').value,
+        segundoNombre: document.getElementById('segundoNombre').value,
+        primerApellido: document.getElementById('primerApellido').value,
+        segundoApellido: document.getElementById('segundoApellido').value,
+        numeroTelefonico: document.getElementById('numeroTelefonico').value,
+        correoElectronico: document.getElementById('correoElectronico').value,
+        cuiPersonal: document.getElementById('cuiPersonal').value,
+        direccionPersonal: document.getElementById('direccionPersonal').value,
+        numeroCuenta: document.getElementById('numeroCuenta').value
+
+    };
+}
+
+// Función para registrar un nuevo estudiante
+btnRegistrar.addEventListener('click', () => {
+    const datos = obtenerDatosFormulario();
+
+    fetch(apiURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datos),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Estudiante registrado exitosamente');
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+// Función para visualizar los maestros registrados
+btnVisualizar.addEventListener('click', () => {
+    fetch(apiURL)
+    .then(response => response.json())
+    .then(data => {
+        const tablaEstudiantes = document.getElementById('tablaEstudiantes');
+        const tbody = tablaEstudiantes.querySelector('tbody');
+
+        // Limpiar el contenido anterior
+        tbody.innerHTML = '';
+
+        // Rellenar la tabla con los datos obtenidos
+        data.forEach(estudiante => {
+            const fila = document.createElement('tr');
+            
+            fila.innerHTML = `
+                <td>${estudiante.primerNombre}</td>
+                <td>${estudiante.segundoNombre}</td>
+                <td>${estudiante.primerApellido}</td>
+                <td>${estudiante.segundoApellido}</td>
+                <td>${estudiante.numeroTelefonico}</td>
+                <td>${estudiante.correoElectronico}</td>
+                <td>${estudiante.cuiPersonal}</td>
+                <td>${estudiante.direccionPersonal}</td>
+                <td>${estudiante.numeroCuenta}</td>
+
+            `;
+            
+            tbody.appendChild(fila);
+        });
+
+        // Mostrar la tabla
+        tablaEstudiantes.style.display = 'table';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+
+// Función para eliminar un estudiante (según CUI)
+btnEliminar.addEventListener('click', () => {
+    const cuiPersonal = document.getElementById('cuiPersonal').value;
+
+    fetch(`${apiURL}/${cuiPersonal}`, {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Estudiante eliminado exitosamente');
+        } else {
+            alert('No se pudo eliminar el estudiante');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+btnEliminar.addEventListener('click', () => {
+    fetch(apiURL)
+    .then(response => response.json())
+    .then(data => {
+        const tablaEstudiantes = document.getElementById('tablaEstudiantes');
+        const tbody = tablaEstudiantes.querySelector('tbody');
+
+        // Limpiar el contenido anterior
+        tbody.innerHTML = '';
+
+        // Rellenar la tabla con los datos obtenidos y un botón de eliminar
+        data.forEach(estudiante => {
+            const fila = document.createElement('tr');
+            
+            fila.innerHTML = `
+                <td>${estudiante.primerNombre}</td>
+                <td>${estudiante.segundoNombre}</td>
+                <td>${estudiante.primerApellido}</td>
+                <td>${estudiante.segundoApellido}</td>
+                <td>${estudiante.numeroTelefonico}</td>
+                <td>${estudiante.correoElectronico}</td>
+                <td>${estudiante.cuiPersonal}</td>
+                <td>${estudiante.direccionPersonal}</td>
+                <td>${estudiante.numeroCuenta}</td>
+
+                <td>
+                    <button onclick="eliminarEstudiante('${estudiante.cuiPersonal}')">Eliminar</button>
+                </td>
+            `;
+            
+            tbody.appendChild(fila);
+        });
+
+        // Mostrar la tabla
+        tablaEstudiantes.style.display = 'table';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+// Función para eliminar un estudiante
+function eliminarEstudiante(cuiPersonal) {
+    if (confirm('¿Estás seguro de que deseas eliminar a este estudiante?')) {
+        fetch(`${apiURL}/${cuiPersonal}`, {
+            method: 'DELETE',
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Estudiante eliminado exitosamente');
+                // Vuelve a cargar la lista para reflejar los cambios
+                btnEliminar.click();
+            } else {
+                alert('No se pudo eliminar el estudiante');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+}

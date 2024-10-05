@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Maestro Jireh</title>
+    <link rel="icon" href="recursos/imagenes/Logo.png" type="image/png">
+    <link rel="stylesheet" href="recursos/css/estiloDashboardMaestro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <img src="recursos/imagenes/Logo.png" alt="">
+            <h1>COLEGIO JIREH</h1>
+            <hr>
+            <ul>
+                <li><a href="#Dashboard"><i class="fas fa-home"></i>Inicio </a></li>
+                <li><a href="#Notas"><i class="fas fa-calendar"></i>Notas</a></li>
+                <li><a href="#Alumnos"><i class="fas fa-child"></i>Alumnos</a></li>
+                <li><a href="#Asistencia"><i class="fas fa-book"></i>
+                        <p>Asistencia</p>
+                    </a></li>
+            </ul>
+        </div>
+        <div class="navbar">
+            <div class="btnNavbar">
+                <a href="#" alt="Notificaciones"><i class="fas fa-bell"></i></a>
+                <button id="cerrarSesion">Cerrar sesion</button>
+            </div>
+        </div>
+        <div class="card-container" id="Dashboard">
+            <div class="descripcion">
+                <h1>Bienvenido, <span class="user">Alejandro</span></h1>
+                <h2>alejandro.colegiojireh@gmail.com</h2>
+            </div>
+            <div class="opciones">
+                <div class="opcion">
+                    <a href="#Notas"><i class="fas fa-book"></i>Control de nota</a>
+                    <p>Toma el control de nota de tus estudiantes</p>
+                </div>
+                <div class="opcion">
+                    <a href="#Alumnos"><i class="fas fa-child"></i>Consulta informacion de tus alumnos</a>
+                    <p>Todo en un solo lugar</p>
+                </div>
+                <div class="opcion">
+                    <a href="#Asistencia"><i class="fas fa-blackboard"></i>Asistencia</a>
+                    <p>Revisa las clases que impartes</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-container" id="Alumnos" class="Alumnos">
+            <!-- <div class="btnAlumnosAgEx">
+                <button id="btnExportar">Exportar</button>
+                <button id="btnAgregar">AgregarAlumnos</button>
+            </div> -->
+            <div class="alumnos">
+                <div class="btnAlumnosFil">
+                    <select name="filtrar" id="btnFiltrar">
+                        <option value="">Selecciona el orden</option>
+                        <option value="alfaascendete">Alfabeticamente [A-Z]</option>
+                        <option value="alfadescendente">Alfabeticamente [Z-A]</option>
+                        <option value="gradoascendente">3ro basico a 1ro primaria</option>
+                        <option value="gradodescendente">1ro primaria a 3ro basico</option>
+                    </select>
+                    <input type="search" name="buscar" id="buscarBtn" placeholder="Ingresa el nombre o correo a buscar">
+                    <i class="fas fa-search"></i>
+                </div>
+                <form action="">
+                    <table id="alumnosTable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alumnosTbody">
+                            <!-- Los alumnos se llenarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+        <div class="card-container" id="Notas">
+            <div class="notas">
+                <div class="opcNotas">
+                    <select name="materia" id="materia">
+                        <option value="">Selecciona la materia</option>
+                        <option value="Matematica">Matematica</option>
+                        <option value="Lenguaje">Lenguaje</option>
+                        <option value="M. Natural">M. Natural</option>
+                        <option value="M. Social">M. Social</option>
+                        <option value="Ingles">Ingles</option>
+                        <option value="Computacion">Computacion</option>
+                        <option value="Ed. Fisica">Ed. Fisica</option>
+                        <option value="Lectura">Lectura</option>
+                        <option value="Form. Ciudadana">Form. Ciudadana</option>
+                    </select>
+                    <select name="grado" id="grado">
+                        <option value="">Selecciona un grado</option>
+                        <option value="1ro_primaria">1ro_primaria</option>
+                        <option value="2do_primaria">2do_primaria</option>
+                        <option value="3ro_primaria">3ro_primaria</option>
+                        <option value="4to_primaria">4to_primaria</option>
+                        <option value="5to_primaria">5to_primaria</option>
+                        <option value="6to_primaria">6to_primaria</option>
+                        <option value="1ro_basico">1ro_basico</option>
+                        <option value="2do_basico">2do_basico</option>
+                        <option value="3ro_basico">3ro_basico</option>
+                    </select>
+                </div>
+                <form action="" id="notasForm">
+                    <table>
+                        <thead>
+                            <td>Clave</td>
+                            <td>Nombre</td>
+                            <td>Actividades</td>
+                            <td>Asistencia</td>
+                            <td>Examen</td>
+                            <td>Nota Final</td>
+                        </thead>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Brandon</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>00</td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="card-container" id="Asistencia">
+            <div class="asistencia">
+                <div class="opcAsistencia">
+                    <select name="materia" id="materia">
+                        <option value="">Selecciona la materia</option>
+                        <option value="Matematica">Matematica</option>
+                        <option value="Lenguaje">Lenguaje</option>
+                        <option value="M. Natural">M. Natural</option>
+                        <option value="M. Social">M. Social</option>
+                        <option value="Ingles">Ingles</option>
+                        <option value="Computacion">Computacion</option>
+                        <option value="Ed. Fisica">Ed. Fisica</option>
+                        <option value="Lectura">Lectura</option>
+                        <option value="Form. Ciudadana">Form. Ciudadana</option>
+                    </select>
+                    <select name="grado" id="grado">
+                        <option value="">Selecciona un grado</option>
+                        <option value="1ro_primaria">1ro_primaria</option>
+                        <option value="2do_primaria">2do_primaria</option>
+                        <option value="3ro_primaria">3ro_primaria</option>
+                        <option value="4to_primaria">4to_primaria</option>
+                        <option value="5to_primaria">5to_primaria</option>
+                        <option value="6to_primaria">6to_primaria</option>
+                        <option value="1ro_basico">1ro_basico</option>
+                        <option value="2do_basico">2do_basico</option>
+                        <option value="3ro_basico">3ro_basico</option>
+                    </select>
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="listadoasistencia">
+                    <form action="">
+                        <table>
+                            <thead>
+                                <td>Clave</td>
+                                <td>Nombre</td>
+                                <td>Presente</td>
+                                <td>Ausente</td>
+                            </thead>
+                            <!-- En esta parte, deben cargarse los alumnos automaticamente -->
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="recursos/js/Dashboard - maestro.js">
+</script>
+<script src="recursos/js/apiAlumnos.js"></script>
+
+
+</html>
