@@ -11,6 +11,12 @@
 </head>
 
 <body>
+
+    <!-- Cuando la vista cambie a la perspectiva de un dispositivo movil, quiero que esta se ajuste y el dashboard permanezca a la izquierda oculto -->
+    <button class="verDashboard">
+        <i class="fas fa-plus"></i>
+    </button>
+
     <div class="dashboard">
         <div class="sidebar">
             <img src="recursos/imagenes/Logo.png" alt="">
@@ -51,12 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-container" id="Foro" class="Foro">
-            <!-- Contenido del foro -->
-            <div class="foro">
-                <p>Aquí podrás consultar los foros y discusiones</p>
-            </div>
-        </div>
+
         <div class="card-container" id="Materias">
             <div class="notas">
                 <div class="opcNotas">
@@ -72,36 +73,88 @@
                         <option value="Lectura">Lectura</option>
                         <option value="Form. Ciudadana">Form. Ciudadana</option>
                     </select>
+                    <select name="grado" id="grado">
+                        <option value="">-- Selecciona un grado --</option>
+                    <option value="1roPrimaria">Primero Primaria</option>
+                    <option value="2doPrimaria">Segundo Primaria</option>
+                    <option value="3roPrimaria">Tercero Primaria</option>
+                    <option value="4toPrimaria">Cuarto Primaria</option>
+                    <option value="5toPrimaria">Quinto Primaria</option>
+                    <option value="6toPrimaria">Sexto Primaria</option>
+                    <option value="1roBasico">Primero Basico</option>
+                    <option value="2doBasico">Segundo Basico</option>
+                    <option value="3roBasico">Tercero Basico</option>
+                    </select>
                 </div>
                 <form action="" id="notasForm">
                     <table>
                         <thead>
+                            <td>Clave</td>
+                            <td>Alumno</td>
                             <td>Actividades</td>
                             <td>Asistencia</td>
                             <td>Examen</td>
                             <td>Nota Final</td>
                         </thead>
                         <tr>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td>00</td>
+                            <td><input type="text" readonly id="claveAlumno"></td>
+                            <td><input type="text" readonly id="nombreAlumno"></td>
+                            <td><input type="text" required id="actividadesAlumno"></td>
+                            <td><input type="text" required id="asistenciaAlumno"></td>
+                            <td><input type="text" required id="examenAlumno"></td>
+                            <td><input type="text" readonly id="notaFinalAlumno"></td>
                         </tr>
                         <!-- Más filas de ejemplo -->
                     </table>
                 </form>
             </div>
         </div>
+
+        <div class="card-container" id="Foro">
+            <h2>Foro de Materias</h2>
+            <div class="foro">
+                <label for="grado">Grado:</label>
+                <select name="grado" id="gradoForo">
+                    <option value="">-- Selecciona un grado --</option>
+                    <option value="1roPrimaria">Primero Primaria</option>
+                    <option value="2doPrimaria">Segundo Primaria</option>
+                    <option value="3roPrimaria">Tercero Primaria</option>
+                    <option value="4toPrimaria">Cuarto Primaria</option>
+                    <option value="5toPrimaria">Quinto Primaria</option>
+                    <option value="6toPrimaria">Sexto Primaria</option>
+                    <option value="1roBasico">Primero Basico</option>
+                    <option value="2doBasico">Segundo Basico</option>
+                    <option value="3roBasico">Tercero Basico</option>
+                </select>
+                
+                <label for="materia">Materia:</label>
+                <select name="materia" id="materiaForo">
+                    <option value="">Selecciona la materia</option>
+                    <option value="Matematica">Matemática</option>
+                    <option value="Lenguaje">Lenguaje</option>
+                    <option value="M. Natural">M. Natural</option>
+                    <option value="M. Social">M. Social</option>
+                    <option value="Ingles">Inglés</option>
+                    <option value="Computacion">Computación</option>
+                    <option value="Ed. Fisica">Ed. Física</option>
+                    <option value="Lectura">Lectura</option>
+                    <option value="Form. Ciudadana">Form. Ciudadana</option>
+                </select>
+            </div>
+            <div id="foro-seleccionado" style="display: block; margin-top: 12px;"></div>
+        </div>
+
         <div class="card-container" id="Calendario">
             <div class="calendario">
                 <h2>Calendario Académico</h2>
                 <div id="calendar"></div>
             </div>
         </div>
-        
-        </div>
+
+    </div>
     </div>
 </body>
-<script src="recursos/js/Dashboard - Alumno.js"></script>
-
+<script src="recursos/js/foro.js"></script>
+<script src="recursos/js/sidebar.js"></script>
+<script src="recursos/js/Dashboard - Admin.js"></script>r
 </html>
